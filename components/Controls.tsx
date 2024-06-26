@@ -6,31 +6,31 @@ export default function Controls({
     handlePause
 }){
     return(
-        <View style={styles.row}>
+      <View className="flex-none flex-row justify-center p-5 space-x-5">
         <TouchableOpacity
             disabled={status===0 || status===1}
             style={(status===0 || status===1)?{...styles.button,opacity:0.5}:styles.button}
             onPress={handleStart}
         >
-            <Text style={styles.buttonText}>Start</Text>
+          <Text style={styles.buttonText}>Start</Text>
         </TouchableOpacity>
         <TouchableOpacity
             disabled={status===-1}
             style={(status===-1)?{...styles.button,opacity:0.5}:styles.button}
             onPress={handlePause}
         >
-            <Text style={styles.buttonText}>
-                {status===0?'Resume':'Pause'}
-            </Text>
+          <Text style={styles.buttonText}>
+              {status===0?'Resume':'Pause'}
+          </Text>
         </TouchableOpacity>
         <TouchableOpacity
             disabled={status===-1}
             style={(status===-1)?{...styles.button,opacity:0.5}:styles.button}
             onPress={handleStop}
         >
-            <Text style={styles.buttonText}>Stop</Text>
+          <Text style={styles.buttonText}>Stop</Text>
         </TouchableOpacity>
-    </View>
+      </View>
     )
 }
 const styles= StyleSheet.create({
